@@ -1,0 +1,57 @@
+<section>
+    <div>
+        <h1> User page </h1>
+    </div>
+
+    <div class="mx-auto " style="width:700px">
+        <h2> Questions asked </h2>
+    </div>
+    <div class="mx-auto " style="width:700px">
+        <table class="table table-bordered">
+            <tr>
+                <th>Title</th>
+                <th>category</th>
+                <th>show question page</th>
+            </tr>
+            {{#each questionAskedList}}
+            <tr>
+                <td>{{this.title}} </td>
+                <td>{{this.name}} </td>
+                <td>
+                    <form method="GET" action="/users/getQuestion">
+                        <input type="hidden" name="id" value="{{this.question_id}}">
+                        <input type="submit" class="btn btn-outline-warning mb-2" value="Go to the question">
+                    </form>
+                </td>
+            </tr>
+            {{/each}}
+        </table>
+    </div>
+
+    <div class="mx-auto " style="width:700px">
+        <h2> Quetions Solved </h2>
+    </div>
+
+    <div class="mx-auto " style="width:700px">
+        <table class="table table-bordered">
+            <tr>
+                <th>Title</th>
+                <th>category</th>
+                <th>show question page</th>
+            </tr>
+            {{#each questionAskedListSolved}}
+            <tr>
+                <td>{{this.title}} </td>
+                <td>{{this.name}} </td>
+                <td>
+                    <form method="GET" action="/users/getQuestionSolved">
+                        <input type="hidden" name="id" value="{{this.question_id}}">
+                        <input type="submit" class="btn btn-outline-warning mb-2" value="Go to the question">
+                    </form>
+                </td>
+            </tr>
+            {{/each}}
+        </table>
+    </div>
+
+</section>

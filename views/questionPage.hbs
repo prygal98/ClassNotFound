@@ -1,0 +1,135 @@
+<section>
+    {{#each errors}}
+    <li>{{this.errorMessage}}</li>
+    {{/each}}
+
+    <div class="mx-auto " style="width:700px">
+        <table class="table table-bordered">
+            <h2>Question</h2>
+            <h4>This question has been asked by {{this.lastname}} {{this.firstname}} </h4>
+            <tr>
+                <th>title</th>
+                <th>solved</th>
+                <th>category</th>
+                <th>posted the </th>
+                <th>subject</th>
+            </tr>
+
+            <tr>
+                <td>{{question.title}} </td>
+                <td>
+                    {{#if question.solved}}
+                        <img src="/images/correct.png">
+                    {{else}}
+                         <img src="/images/mauvais.png">
+                    {{/if}}
+                </td>
+                <td>{{question.name}} </td>
+                <td>{{question.creation_date}} </td>
+                <td>{{question.subject}} </td>
+            </tr>
+
+        </table>
+    </div>
+    {{#if is_authenticated}}
+    <div class="mx-auto " style="width:700px">
+        <form method="POST" action="/questions/report">
+            <input type="hidden" name="id" value="{{id_question.question_id}}">
+            <input id="reportnbtn" class="btn btn-danger" type="submit" value="Report Question">
+        </form>
+    </div>
+
+    {{/if }}
+
+    {{#if questionSolved}}
+    <div class="mx-auto " style="width:700px">
+        <h4>This question has been solved</h4>
+        <table class="table table-bordered">
+            <tr>
+                <th>Posted on </th>
+                <th>Subject</th>
+                {{#if is_authenticated }}
+                <th>Report</th>
+                {{/if }}
+            </tr>
+            <tr>
+                <td>{{answer.creation_date}} </td>
+                <td>{{answer.subject}} </td>
+                {{#if is_authenticated }}
+                <td>
+                    <form method="POST" action="/questions/reportAnswer">
+                        <input type="hidden" name="id_answers" value="{{answer.answers_id}}">
+                        <input type="hidden" name="id_question" value="{{answer.question}}">
+                        <input class="btn btn-danger" type="submit" value="Report">
+                    </form>
+                </td>
+                {{/if }}
+            </tr>
+        </table>
+    </div>
+    {{/if }}
+
+    <div class="mx-auto " style="width:700px">
+        <h4>Answers</h4>
+        <table class="table table-bordered">
+            <tr>
+                <th>Posted on </th>
+                <th>Subject</th>
+                {{#if is_authenticated }}
+                <th>Report answers</th>
+                {{#if owner_admin }}
+                {{#if questionNotSolved }}
+                <th>Approve Question</th>
+                {{/if}}
+                {{/if}}
+                {{/if}}
+            </tr>
+            {{#each answers}}
+            <tr>
+                <td>{{this.creation_date}} </td>
+                <td>{{this.subject}} </td>
+                {{#if ../is_authenticated }}
+                <td>
+                    <form method="POST" action="/questions/reportAnswer">
+                        <input type="hidden" name="id_answers" value="{{this.answers_id}}">
+                        <input type="hidden" name="id_question" value="{{this.question}}">
+                        <input class="btn btn-danger" type="submit" value="Report">
+                    </form>
+                    {{/if}}
+                </td>
+                {{#if ../owner_admin}}
+                {{#if ../questionNotSolved }}
+                <td>
+                    <form method="POST" action="/questions/approveAnswer">
+                        <input type="hidden" name="id_answers" value="{{this.answers_id}}">
+                        <input type="hidden" name="id" value="{{id_question.question_id}}">
+                        <input class="btn btn-success" type="submit" value="Approve">
+                    </form>
+                </td>
+                {{/if}}
+                {{/if}}
+            </tr>
+            {{/each}}
+        </table>
+    </div>
+    {{#unless questionSolved}}
+    <div class="mx-auto " style="width:700px">
+        {{#if is_authenticated }}
+        <div class="form-floating">
+            <h3>Leave a comment</h3>
+            <form action="/questions/addAnswer" method="post">
+                <input type="hidden" name="id_question" value="{{id_question.question_id}}">
+                <textarea name="subject" class="form-control" placeholder="Leave a comment here" id="floatingTextarea2"
+                    style="height: 100px"></textarea>
+                <input id="formbtn" class="btn btn-outline-success mb-2" type="submit" value="submit">
+            </form>
+        </div>
+        {{/if }}
+        {{/unless}}
+    </div>
+    {{#if errorlenght}}
+    <div class="errorcomment">
+        {{errorlenght}}
+    </div>
+    {{/if }}
+</section>

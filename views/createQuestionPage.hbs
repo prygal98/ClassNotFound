@@ -1,0 +1,49 @@
+<section>
+    <div>
+        <h1 class="createQuestion"> Create a new Question </h1>
+    </div>
+
+    <form action="/questions/addQuestion" method="post">
+        <div class="mx-auto " style="width:700px">
+            <h2>Title</h2>
+        </div>
+
+        <div class="mx-auto " style="width:300px">
+            <input class="form-control" type="text" placeholder="Write your title here" name="title">
+            <input type="hidden" name="id_question" value="Title">
+        </div>
+
+        <div class="mx-auto " style="width:700px">
+            <h2> Category</h2>
+        </div>
+        <div class="mx-auto " style="width:300px">
+            <select name="category" class="form-select" aria-label="Default select example">
+                {{#each categoriesAffiche}}
+                <option value={{this.category_id}}> {{this.name}}</option>
+                {{/each}}
+            </select>
+        </div>
+
+
+        <div class="mx-auto " style="width:700px">
+            <h2>Subject</h2>
+            <div class="form-floating">
+                <input type="hidden" name="id_question" value="Subject">
+                <textarea name="subject" class="form-control" placeholder="Leave a comment here" id="floatingTextarea2"
+                    style="height: 100px"></textarea>
+                <label for="floatingTextarea2">Write your subject here </label>
+            </div>
+            <div>
+                <input id="formbtn" class="btn btn-outline-success mb-2" type="submit" value="submit">
+            </div>
+        </div>
+    </form>
+
+    {{#if errorlenght}}
+    <div class="errorcomment">
+        {{errorlenght}}
+    </div>
+    {{/if }}
+
+
+</section>

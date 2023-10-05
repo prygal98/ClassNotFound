@@ -1,0 +1,67 @@
+<section>
+    <div>
+        <h1>Home Page </h1>
+    </div>
+
+    <div class="searchHomePage">
+        <form class="form-inline d-flex justify-content-center md-form form-sm mt-0" method="get"
+            action="/questions/search" style="width:300px">
+            <input class="form-control form-control-sm ml-1 w-75" type="text" placeholder="Search a title"
+                aria-label="Search" name="titleQuestion">
+            <button class="btn btn-warning mb-1.5" type="submit" style="width:100px">Search</button>
+        </form>
+    </div>
+
+    <div class="dropdown">
+        <button class="btn btn-warning dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false"> Search a category
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            {{#each categoriesAffiche}}
+            <a class="dropdown-item" href="/questions/searchCategory?categoryQuestion={{this.category_id}}"
+                value="{{this.category_id}}">{{this.name}}</a>
+            {{/each}}
+        </div>
+    </div>
+
+    {{#if is_authenticated }}
+    <div class="bouttonAjoutQuestion">
+        <form method="GET" action="/questions/showCreateQuestionPage">
+            <input type="submit" class="btn btn-dark" value="Add new question">
+        </form>
+    </div>
+    {{/if}}
+
+    <div class="mx-auto " style="width:700px">
+        <table class="table table-bordered">
+            <tr>
+                <th>title</th>
+                <th>solved</th>
+                <th>category</th>
+                <th>show question page</th>
+            </tr>
+            {{#each questionList}}
+            <tr>
+                <td>{{this.title}} </td>
+                <td>{{#if this.solved}}
+                    <img src="/images/correct.png">
+                    {{else}}
+                    <img src="/images/mauvais.png">
+                    {{/if}}
+                </td>
+                <td>{{this.name}} </td>
+                <td>
+                    <form method="GET" action="/questions/display">
+                        <input type="hidden" name="id" value="{{this.question_id}}">
+                        <input type="submit" class="btn btn-outline-warning mb-2" value="Show more">
+                    </form>
+                </td>
+            </tr>
+            {{/each}}
+        </table>
+    </div>
+
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+
+</section>

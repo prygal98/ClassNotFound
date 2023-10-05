@@ -1,0 +1,23 @@
+<header>
+  <div class="logo">
+    <a href="/questions"><img src="/images/logo.png" alt="logo" /></a>
+  </div>
+  <nav class="navbar navbar-light" style="background-color: #112133;">
+    <a class="navbar-brand" id="home_nav" href="/questions"> - Home - </a>
+    <ul>
+      {{#if is_authenticated}}
+        <li><a href="/users"> Users</a></li>
+        {{#if is_admin}}
+          <li><a href="/members"> Admin</a></li>
+        {{/if}}
+      {{/if}}
+      {{#unless is_authenticated}}
+      <li><a href="/users/register"> Register</a></li>
+      <li><a href="/users/login"> Login</a></li>
+      {{/unless}}
+      {{#if is_authenticated}}
+        <li><a href="/users/logout "> Logout</a></li>
+      {{/if}}
+    </ul>
+  </nav>
+</header>

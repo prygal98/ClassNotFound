@@ -1,0 +1,31 @@
+<section>
+  <div class="center">
+    <form method="post" action="/users/log">
+      <h2>Login</h2>
+      <div class="txt_field">
+        <label> E-mail Adress </label>
+        <input type="email" name="memberLogin" placeholder="Adress mail" required>
+      </div>
+      <div class="txt_field">
+        <label> Password </label>
+        <input type="password" name="memberPassword" placeholder="password" required>
+      </div>
+
+      <button id="loginbtn" type="submit" class="btn btn-outline-warning">Log in </button>
+      <div class="signup_link">
+        Not a member ? <a href="/users/register">Signup</a>
+      </div>
+    </form>
+
+
+    {{#if errors}}
+    <div class="errorLogin2">
+      <ul>
+        {{#each errors}}
+        {{this.errorMessage}}
+        {{/each}}
+      </ul>
+      {{/if}}
+    </div>
+
+</section>

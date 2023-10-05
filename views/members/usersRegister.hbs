@@ -1,0 +1,47 @@
+<section>
+
+  <div class="center2">
+    <form method="post" action="/users/add">
+      <h2>SIGN IN</h2>
+      <div class="container">
+        <div class="txt_field" id="part1">
+          <label> Last Name </label>
+          <input type="text" name="memberLastName" placeholder="Last Name" required>
+        </div>
+        <div class="txt_field" id="part2">
+          <label> First Name </label>
+          <input type="text" name="memberFirstName" placeholder="First Name" required>
+        </div>
+      </div>
+      <div class="txt_field">
+        <label> E-mail Adress </label>
+        <input type="email" name="memberLogin" placeholder="Adress mail" required>
+      </div>
+      <div class="txt_field">
+        <label> Password </label>
+        <input type="password" name="memberPassword" placeholder="password" required>
+      </div>
+      <div class="txt_field">
+        <label> Password confirmation </label>
+        <input type="password" name="memberPasswordConfirmation" placeholder="Confirm password" required>
+      </div>
+      <button id="registerbtn" type="submit" class="btn btn-outline-warning">register now </button>
+      <div class="register_link">
+        Welcome to this new adnventue !
+      </div>
+    </form>
+
+    {{#if errors}}
+    <div class="errorRegister">
+      <ul>
+        {{#each errors}}
+        {{this.errorMessage}}
+        {{/each}}
+      </ul>
+    </div>
+    {{/if}}
+  </div>
+
+
+
+</section>

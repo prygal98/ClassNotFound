@@ -1,0 +1,58 @@
+<section>
+    <div class="mx-auto " style="width:900px">
+        <h2>Reported Questions</h2>
+        <table class="table table-bordered">
+            <tr>
+                <th>Title</th>
+                <th>Subject</th>
+                <th>Accept Question</th>
+                <th>Decline Question</th>
+            </tr>
+            {{#each listReportedQuestions}}
+            <tr>
+                <td>{{this.title}} </td>
+                <td>{{this.subject}} </td>
+                <td>
+                    <form method="POST" action="/admin/approveQuestion">
+                        <input type="hidden" name="id" value="{{this.question_id}}">
+                        <input type="submit" class="btn btn-success" value="Accept">
+                    </form>
+                </td>
+                <td>
+                    <form method="POST" action="/admin/deleteQuestion">
+                        <input type="hidden" name="id" value="{{this.question_id}}">
+                        <input type="submit" class="btn btn-danger" value="Decline">
+                    </form>
+                </td>
+            </tr>
+            {{/each}}
+        </table>
+    </div>
+    <div class="mx-auto " style="width:900px">
+        <h2>Reported Answers</h2>
+        <table class="table table-bordered">
+            <tr>
+                <th>Subject</th>
+                <th>Accept Question</th>
+                <th>Decline Question</th>
+            </tr>
+            {{#each listReportedAnswers}}
+            <tr>
+                <td>{{this.subject}} </td>
+                <td>
+                    <form method="POST" action="/admin/approveAnswer">
+                        <input type="hidden" name="id" value="{{this.answers_id}}">
+                        <input type="submit" class="btn btn-success" value="Accept">
+                    </form>
+                </td>
+                <td>
+                    <form method="POST" action="/admin/deleteAnswer">
+                        <input type="hidden" name="id" value="{{this.answers_id}}">
+                        <input type="submit" class="btn btn-danger" value="Decline">
+                    </form>
+                </td>
+            </tr>
+            {{/each}}
+        </table>
+    </div>
+</section>

@@ -1,0 +1,332 @@
+@import '~mdb-ui-kit/css/mdb.min.css';
+* {
+  margin: 0px;
+  padding: 0px;
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.logo{
+    background-color:  #c9d6fe;
+    
+}
+
+.navbar{
+  padding-top: 1%;
+  background-color: rgb(34, 36, 41);
+  padding-bottom: 3%;
+}
+
+#formbtn{
+margin-top: 2%;
+margin-left: 88%;
+}
+
+#reportnbtn{
+  margin-left: 78%;
+}
+
+footer p {
+  background-color:  #c9d6fe;
+  text-align: center;
+  padding-top: 4px;
+  
+  bottom: 0;
+  width: 100%;
+  
+}
+
+footer{
+  background-color: #c9d6fe;
+}
+
+a:link 
+{ 
+ text-decoration:none; 
+} 
+
+
+.navbar a {
+  color: rgb(254, 254, 255);
+}
+
+.createQuestion{
+  text-align: center;
+  padding-bottom: 3px;
+}
+
+
+table{
+  background-color: #6b8aac;
+  margin-top: 1%;
+}
+
+header nav ul li {
+  display: inline;
+  font-size :140%;
+  margin: 30px;
+}
+
+#home_nav{
+  font-size :140%;
+  color: rgb(254, 254, 255);
+  padding-left: 2%;
+}
+
+
+
+table, th, td {
+  border: solid 1px;
+  border-collapse: collapse;
+}
+
+td, th {
+  text-align: center;
+  padding : 5px;
+}
+
+section {
+  background-color: rgb(187, 196, 203);
+  padding-left: 5%;
+  padding-bottom: 63%;
+  padding-top: 5%;
+}
+
+ /*************************************************************************************/
+  /******************************  CSS LOGIN FORM  RAPHAEL MALKA     ****************************/
+
+  .center{
+    padding-top: 10px;
+    margin-left: 30%;
+    position: absolute;
+    background-color: #5983b3;
+    width: 400px;
+    margin-bottom: 50%;
+    border-radius: 10px;
+  }
+
+  
+  .center h2{
+    padding-top: 2%;
+    padding-bottom: 1%;
+    text-align: center;
+    padding: 0 0 20px 0;
+    border-bottom: 1px solid silver;
+  }
+
+  .center form {
+    padding: 0 40px;
+    box-sizing: border-box;
+  }
+
+  .center form .txt_field input{
+    height: 100%;
+    width: 100%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    padding-left: 20px;
+    border-radius: 25px;
+    outline: none;
+    border: 1px solid lightgray;
+  }
+
+  .txt_field {
+      margin-top: 4%;
+      display: block;
+      margin-bottom: 2%;
+      margin-bottom: 20px;
+      text-align: center;
+  }
+
+  #registerbtn{
+    margin-left: 37%;
+    padding-bottom: 3%;
+    margin-bottom: 1%;
+  }
+
+  #loginbtn{
+    margin-left: 37%;
+    padding-bottom: 3%;
+    margin-bottom: 1%;
+  }
+  
+ 
+
+  .signup_link{
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+ /*************************************************************************************/
+  /******************************  CSS REGISTER FORM   RAPHAEL MALKA    ****************************/
+
+  .center2{
+    padding-top: 10px;
+    margin-left: 26%;
+    position: absolute;
+    background-color: #5983b3;
+    width: 550px;
+    margin-bottom: 50%;
+    border-radius: 10px;
+  }
+
+  .center2 h2{
+    padding-top: 2%;
+    padding-bottom: 1%;
+    text-align: center;
+    padding: 0 0 20px 0;
+    border-bottom: 1px solid silver;
+  }
+
+  .center2 form {
+    padding: 0 40px;
+    box-sizing: border-box;
+  }
+
+  .center2 form .txt_field input{
+    height: 100%;
+    width: 100%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    padding-left: 20px;
+    border-radius: 25px;
+    outline: none;
+    border: 1px solid lightgray;
+  }
+
+  .txt_field {
+    margin-top: 4%;
+    display: block;
+    margin-bottom: 2%;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.txt_field input{
+  margin-top: 4%;
+}
+
+  .btn2{
+  color: rgb(251, 251, 251);
+  display: block;
+  border-radius: 10px;
+  font-size: 25px;
+  font-weight: 500;
+  cursor: pointer;
+  background: linear-gradient(-135deg, #9c4c96, #30429d);
+  transition: all 0.3s ease;
+  padding-left: 4%;
+  padding-right: 4%;
+  margin-left: 22%;
+  }
+
+  .register_link{
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  .test1{
+    margin-top: 40%;
+    
+  }
+  
+
+ .container .txt_field {
+   width: 44%;
+  
+   float: right;
+   padding-left: 19px;
+   padding-top: 2%;
+   padding-bottom: 2%;
+ }
+
+ #part1{
+   margin-left: 10%;
+   padding-right: 10px
+ }
+ #part2{
+   
+   padding-right: 5px;
+   margin-right: 5px;
+ }
+ .errorRegister{
+  padding-left: 1%;
+  padding-right: 3%;
+  margin-left: 5%;
+  margin-right: 5%;
+  padding-top: 2%;
+  margin-bottom: 3%;
+  border-radius: 10px;
+  border: 4mm ridge rgb(174, 68, 81);
+  background-color: rgb(190, 117, 125);
+ }
+
+ .errorLogin2{
+  padding-left: 6%;
+  padding-right: 1%;
+  margin-left: 5%;
+  margin-right: 5%;
+  padding-top: 2%;
+  margin-bottom: 3%;
+  border: 4mm ridge rgb(174, 68, 81);
+  border-radius: 10px;
+  background-color: rgb(190, 117, 125);
+ }
+
+ .errorcomment{
+   margin-left: 23%;
+  margin-right: 24%;
+  padding-left: 10%;
+  font-size: large;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  border: 4mm ridge rgb(174, 68, 81);
+  border-radius: 10px;
+  background-color: rgb(190, 117, 125);
+ }
+
+
+ /*************************************************************************************/
+  /******************************  QUESTION PAGE RAPHAEL MALKA     ****************************/
+
+.table_question{
+    padding-top: 3%;
+    
+  }
+.table_answers{
+  margin-top: 3%;
+  
+}
+
+.form_answer{
+  margin-top: 3%;
+}
+
+ .form_answer input[type="text"]{
+    width:600px;
+    height: 50px;
+}
+
+.searchHomePage {
+  padding-top: 2%;
+  padding-left: 810px;
+  padding-right: 100px;
+
+}
+
+.dropdown {
+  padding-bottom: 1%;
+  
+}
+
+.searchHomePage, .dropdown {
+  display: inline-block;
+}
+
+.bouttonAjoutQuestion {
+  padding-top: 1%;
+  padding-left: 1080px;
+  padding-bottom: 1%;
+}
+
+
+
+
