@@ -10,8 +10,8 @@
 
 // TODO export your database object & create your models   ICI J AI RETIRER CETTE LIGNE !!!!!!! 
 
-// personal computer macos
-const db = require('better-sqlite3')('/Users/raph/Desktop/final.db', { verbose: console.log });
+// personal computer macos".txt"
+const db = require('better-sqlite3')('C:/Cours_bac_2/db_1_year/final.db', { verbose: console.log });
 
 
 module.exports = db;
